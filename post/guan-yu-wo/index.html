@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>糖不甩</title>
+<title>关于我 | 糖不甩</title>
 <meta name="description" content="总有一天，我要撕碎这片虚伪的星空。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="https://20170952.github.io/Yxtbs.github.io//styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -23,6 +29,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://20170952.github.io/Yxtbs.github.io/">糖不甩</a></h3>
@@ -60,46 +67,47 @@
   </div>
 </nav>
 
-
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>关于我</h1>
+            <p class="article-meta">
+              2021-08-04
+              
+                <a href="https://20170952.github.io/Yxtbs.github.io/tag/8oWV8AUjQ/" class="badge ">
+                  番外集合
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>我是谁？我在哪儿？我要干什么？</p>
+<!-- more -->
+<p>我，坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">(ZJ,NB)</mtext></mrow><annotation encoding="application/x-tex">\texttt{(ZJ,NB)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333299999999999em;vertical-align:-0.13889em;"></span><span class="mord text"><span class="mord texttt">(ZJ,NB)</span></span></span></span></span>，现在是一名初二的学生。<br>
+曾经的博客在<a href="https://www.cnblogs.com/Xsmyy/">这里</a>。<br>
+现在的博客在<a href="https://20170952.github.io/Yxtbs.github.io/">这里</a>。<br>
+兴趣爱好广泛，是一个喜欢搞文化课和其他竞赛的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">OIer</mtext></mrow><annotation encoding="application/x-tex">\texttt{OIer}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">OIer</span></span></span></span></span>。<br>
+现在的水平大概是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TG</mtext></mrow><annotation encoding="application/x-tex">\texttt{TG}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TG</span></span></span></span></span> 组。<br>
+希望大家能多多指教~~</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/">关于我</a>
-    </h2>
-    <p class="article-meta">
-      2021-08-04
-      
-        <a href="https://20170952.github.io/Yxtbs.github.io/tag/8oWV8AUjQ/" class="badge ">
-          番外集合
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>我是谁？我在哪儿？我要干什么？</p>
-
-    </p>
-    <div class="row">
-      <a href="https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
         </div>
         
-        <div class="row flex-edges">
-  
-  
-</div>
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
-      
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://20170952.github.io/Yxtbs.github.io//images/avatar.png?v=1628086903086" class="no-responsive avatar">
@@ -140,7 +148,7 @@
     </div>
     <div class="row">
       
-        <a href="https://20170952.github.io/Yxtbs.github.io/tag/8oWV8AUjQ/" class="badge success">
+        <a href="https://20170952.github.io/Yxtbs.github.io/tag/8oWV8AUjQ/" class="badge secondary">
           番外集合
         </a>
       
@@ -151,7 +159,9 @@
   </div>
 </div>
 
+
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
@@ -161,6 +171,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

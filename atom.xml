@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-08-04T14:16:53.659Z</updated>
+    <updated>2021-08-04T14:21:49.463Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,4 +10,22 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[关于我]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/">
+        </link>
+        <updated>2021-08-04T14:18:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>我是谁？我在哪儿？我要干什么？</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>我是谁？我在哪儿？我要干什么？</p>
+<!-- more -->
+<p>我，坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">(ZJ,NB)</mtext></mrow><annotation encoding="application/x-tex">\texttt{(ZJ,NB)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333299999999999em;vertical-align:-0.13889em;"></span><span class="mord text"><span class="mord texttt">(ZJ,NB)</span></span></span></span></span>，现在是一名初二的学生。<br>
+曾经的博客在<a href="https://www.cnblogs.com/Xsmyy/">这里</a>。<br>
+现在的博客在<a href="https://20170952.github.io/Yxtbs.github.io/">这里</a>。<br>
+兴趣爱好广泛，是一个喜欢搞文化课和其他竞赛的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">OIer</mtext></mrow><annotation encoding="application/x-tex">\texttt{OIer}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">OIer</span></span></span></span></span>。<br>
+现在的水平大概是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TG</mtext></mrow><annotation encoding="application/x-tex">\texttt{TG}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TG</span></span></span></span></span> 组。<br>
+希望大家能多多指教~~</p>
+]]></content>
+    </entry>
 </feed>

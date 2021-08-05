@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-08-05T03:03:56.416Z</updated>
+    <updated>2021-08-05T04:46:06.077Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[CF1555场题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf1555-chang-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf1555-chang-ti-jie/">
+        </link>
+        <updated>2021-08-05T04:37:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>Educational Codeforces Round 112 (Rated for Div. 2)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Educational Codeforces Round 112 (Rated for Div. 2)</p>
+<!-- more -->
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于我]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/</id>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-08-10T08:08:13.655Z</updated>
+    <updated>2021-08-10T08:16:57.997Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,133 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[CF1557场题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf1557-chang-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf1557-chang-ti-jie/">
+        </link>
+        <updated>2021-08-10T08:11:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Round #737 (Div. 2)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Round #737 (Div. 2)</p>
+<!-- more -->
+<h1 id="apizzaforces">A.PizzaForces</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">900</mn></mrow><annotation encoding="application/x-tex">\mathtt{900}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">9</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+首先我们来枚举一下，得知：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 及以上的偶数都会刚好分完<br>
+而且每个披萨的性价比是一样的<br>
+那么，我们可以这样考虑：</p>
+<ul>
+<li>如果人数不多于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 人，那么也要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span> 分钟</li>
+<li>如果人数多于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 人且为偶数，那么肯定可以刚好吃完，没有多余</li>
+<li>如果人数多于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 人且为奇数，那么一定会剩下一个人的量<br>
+然后就不难写出代码了</li>
+</ul>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+int N,A[100001];
+#define int long long
+main(void)
+{
+	BetterIO;
+	register int Case;cin&gt;&gt;Case;while(Case--)
+	{
+		register int i;cin&gt;&gt;N;
+		for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
+		sort(A+1,A+N+1);
+		register int Sum=0;
+		for(i=1;i&lt;N;i++)Sum+=A[i];
+		printf(&quot;%.9lf\n&quot;,1.0*Sum/(N-1)+1.0*A[N]);
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="btwo-tables">B.Two Tables</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1300</mn></mrow><annotation encoding="application/x-tex">\mathtt{1300}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">3</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+肯定是横着平移或者竖着平移才有可能作为最短距离<br>
+不难发现，我们一定只能把它移到边界上<br>
+那么我们不妨枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 条边，然后依次判是否可行<br>
+最后再取一下答案即可<br>
+然后就不难写出代码了</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+int N,K,A[100001];
+pair&lt; int,int &gt;B[100001];
+int main(void)
+{
+	BetterIO;
+	register int Case;cin&gt;&gt;Case;while(Case--)
+	{
+		register int i;cin&gt;&gt;N&gt;&gt;K;
+		for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
+		for(i=1;i&lt;=N;i++)B[i].first=A[i],B[i].second=i;
+		sort(B+1,B+N+1);
+		register int Ans=0;
+		for(i=2;i&lt;=N;i++)if(B[i].second!=B[i-1].second+1)Ans++;
+		if(Ans&lt;K)puts(&quot;YES&quot;);
+		else puts(&quot;NO&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="ccoin-rows">C.Coin Rows</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1300</mn></mrow><annotation encoding="application/x-tex">\mathtt{1300}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">3</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+看懂题目之后，我们来观察样例<br>
+我们提出一个猜想：Bob 只能先一直往右，再一直往下或是先一直往下，再一直往右<br>
+然后我们考虑分别用前缀和维护一下，不然会 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TLE</mtext></mrow><annotation encoding="application/x-tex">\texttt{TLE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TLE</span></span></span></span></span><br>
+维护完之后，暴力枚举 Alice 的路线即可<br>
+然后就不难写出代码了</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+#define int long long
+#define MOD 1000000007
+int N,K,Inv[200001],Fct[200001];
+inline int Quickly_Power(int A,int P)
+{
+    register int Return=1;
+    while(P)
+    {
+        if(P&amp;1)Return*=A,Return%=MOD;
+        A*=A,A%=MOD;
+        P&gt;&gt;=1;
+    }
+    return Return%MOD;
+}
+signed main(void)
+{
+	BetterIO;
+	register int i;Inv[0]=Fct[0]=1;
+	for(i=1;i&lt;=200000;i++)Fct[i]=Fct[i-1]*i%MOD,Inv[i]=Inv[i-1]*Quickly_Power(i,MOD-2)%MOD;
+	register int Case;cin&gt;&gt;Case;while(Case--)
+	{
+		cin&gt;&gt;N&gt;&gt;K;
+		if(N&amp;1)
+		{
+			register int S=0;
+			for(i=0;i&lt;N;i+=2)S=(S+Inv[i]*Fct[N]%MOD*Inv[N-i]%MOD)%MOD;
+			cout&lt;&lt;Quickly_Power((S+1)%MOD,K)&lt;&lt;endl;
+		}
+		else
+		{
+			register int S1=0,S2=0;
+			for(i=0;i&lt;N;i+=2)S1=(S1+Inv[i]*Fct[N]%MOD*Inv[N-i]%MOD)%MOD;
+			for(i=0;i&lt;=N;i++)S2=(S2+Inv[i]*Fct[N]%MOD*Inv[N-i]%MOD)%MOD;
+			register int Ans1=0,Ans2=1;
+			for(i=1;i&lt;=K;i++)
+			{
+				Ans1=(Ans1+Ans2*Quickly_Power(S2,K-i))%MOD;
+				Ans2=(Ans2*S1)%MOD;
+			}
+			cout&lt;&lt;(Ans1+Ans2)%MOD&lt;&lt;endl;
+		}
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF1555场题解]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/cf1555-chang-ti-jie/</id>

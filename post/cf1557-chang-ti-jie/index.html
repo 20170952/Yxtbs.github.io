@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CF1557场题解 | 糖不甩</title>
-<link rel="shortcut icon" href="https://20170952.github.io/Yxtbs.github.io//favicon.ico?v=1629778606761">
+<link rel="shortcut icon" href="https://20170952.github.io/Yxtbs.github.io//favicon.ico?v=1629780038250">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://20170952.github.io/Yxtbs.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="CF1557场题解 | 糖不甩 - Atom Feed" href="https://20170952.github.io/Yxtbs.github.io//atom.xml">
@@ -25,7 +25,7 @@ Difficulty\mathtt{Difficulty}Difficulty=800\mathtt{800}800
       <div class="main-content">
         <div class="site-header">
   <a href="https://20170952.github.io/Yxtbs.github.io/">
-  <img class="avatar" src="https://20170952.github.io/Yxtbs.github.io//images/avatar.png?v=1629778606761" alt="">
+  <img class="avatar" src="https://20170952.github.io/Yxtbs.github.io//images/avatar.png?v=1629780038250" alt="">
   </a>
   <h1 class="site-title">
     糖不甩
@@ -79,7 +79,7 @@ Difficulty\mathtt{Difficulty}Difficulty=800\mathtt{800}800
                 2021-08-10
               </span>
               <span>
-                5 min read
+                3 min read
               </span>
               
                 <a href="https://20170952.github.io/Yxtbs.github.io/tag/OOOB6CzY7/" class="post-tag">
@@ -163,68 +163,12 @@ int main(void)
 	return 0;
 }
 </code></pre>
-<h1 id="cmoamen-and-xor">C.Moamen and XOR</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1700</mn></mrow><annotation encoding="application/x-tex">\mathtt{1700}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">7</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-这道题目我们分类讨论：</p>
-<ul>
-<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∣</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2\mid n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∣</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则</li>
-<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>∤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">2\nmid n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.99253em;vertical-align:-0.25142em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">∤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，则</li>
-</ul>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-#define int long long
-#define MOD 1000000007
-int N,K,Inv[200001],Fct[200001];
-inline int Quickly_Power(int A,int P)
-{
-    register int Return=1;
-    while(P)
-    {
-        if(P&amp;1)Return*=A,Return%=MOD;
-        A*=A,A%=MOD;
-        P&gt;&gt;=1;
-    }
-    return Return%MOD;
-}
-signed main(void)
-{
-	BetterIO;
-	register int i;Inv[0]=Fct[0]=1;
-	for(i=1;i&lt;=200000;i++)Fct[i]=Fct[i-1]*i%MOD,Inv[i]=Inv[i-1]*Quickly_Power(i,MOD-2)%MOD;
-	register int Case;cin&gt;&gt;Case;while(Case--)
-	{
-		cin&gt;&gt;N&gt;&gt;K;
-		if(N&amp;1)
-		{
-			register int S=0;
-			for(i=0;i&lt;N;i+=2)S=(S+Inv[i]*Fct[N]%MOD*Inv[N-i]%MOD)%MOD;
-			cout&lt;&lt;Quickly_Power((S+1)%MOD,K)&lt;&lt;endl;
-		}
-		else
-		{
-			register int S1=0,S2=0;
-			for(i=0;i&lt;N;i+=2)S1=(S1+Inv[i]*Fct[N]%MOD*Inv[N-i]%MOD)%MOD;
-			for(i=0;i&lt;=N;i++)S2=(S2+Inv[i]*Fct[N]%MOD*Inv[N-i]%MOD)%MOD;
-			register int Ans1=0,Ans2=1;
-			for(i=1;i&lt;=K;i++)
-			{
-				Ans1=(Ans1+Ans2*Quickly_Power(S2,K-i))%MOD;
-				Ans2=(Ans2*S1)%MOD;
-			}
-			cout&lt;&lt;(Ans1+Ans2)%MOD&lt;&lt;endl;
-		}
-	}
-	return 0;
-}
-</code></pre>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li><a href="#aezzat-and-two-subsequences">A.Ezzat and Two Subsequences</a></li>
 <li><a href="#bmoamen-and-k-subarrays">B.Moamen and k-subarrays</a></li>
-<li><a href="#cmoamen-and-xor">C.Moamen and XOR</a></li>
 </ul>
 
               </div>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-08-25T03:01:44.110Z</updated>
+    <updated>2021-08-25T03:15:06.954Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -102,6 +102,22 @@ signed main(void)
 <td style="text-align:center"><a href="https://www.luogu.com.cn/paste/yluy3mjt"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Code</mtext></mrow><annotation encoding="application/x-tex">\texttt{Code}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Code</span></span></span></span></span></a></td>
 <td style="text-align:center"><a href="https://www.luogu.com.cn/paste/v64k5oal"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Code</mtext></mrow><annotation encoding="application/x-tex">\texttt{Code}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Code</span></span></span></span></span></a></td>
 <td style="text-align:center"><a href="https://www.luogu.com.cn/paste/5d1j72kq"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Code</mtext></mrow><annotation encoding="application/x-tex">\texttt{Code}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Code</span></span></span></span></span></a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathsize="1.44em"><mtext mathvariant="monospace">Geometry</mtext></mstyle></mrow><annotation encoding="application/x-tex">\Large\texttt{Geometry}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1999952em;vertical-align:-0.31999679999999997em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord texttt">Geometry</span></span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Dist</mtext></mrow><annotation encoding="application/x-tex">\texttt{Dist}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Dist</span></span></span></span></span></th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Scan</mtext><mtext> </mtext><mtext mathvariant="monospace">Line</mtext></mrow><annotation encoding="application/x-tex">\texttt{Scan Line}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Scan Line</span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://www.luogu.com.cn/paste/8sjmix73"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Code</mtext></mrow><annotation encoding="application/x-tex">\texttt{Code}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Code</span></span></span></span></span></a></td>
+<td style="text-align:center"><a href="https://www.luogu.com.cn/paste/4i1tvtp2"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Code</mtext></mrow><annotation encoding="application/x-tex">\texttt{Code}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Code</span></span></span></span></span></a></td>
 </tr>
 </tbody>
 </table>

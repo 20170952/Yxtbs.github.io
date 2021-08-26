@@ -2,22 +2,24 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于我 | 糖不甩</title>
+<title>CF13C题解 | 糖不甩</title>
 <link rel="shortcut icon" href="https://20170952.github.io/Yxtbs.github.io//favicon.ico?v=1629974435211">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://20170952.github.io/Yxtbs.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于我 | 糖不甩 - Atom Feed" href="https://20170952.github.io/Yxtbs.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="CF13C题解 | 糖不甩 - Atom Feed" href="https://20170952.github.io/Yxtbs.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="Who am I? Where am I? What am I doing?
+    <meta name="description" content="Codeforces Beta Round #13
 
-我，坐标 (ZJ,NB)\texttt{(ZJ,NB)}(ZJ,NB)，现在是一名初二的学生。
-曾经的博客在这里。
-现在的博客在这里。
-兴趣爱好广泛，是一个喜欢..." />
-    <meta name="keywords" content="番外集合" />
+C.Sequence
+这道题目我们可以考虑直接上 STL
+我们一个数一个数地放进一个大根堆(优先队列)
+其实就是算到当前数时
+取前面最大的数出来
+假如现在这个数比前面最大数大或相等就没事..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -73,43 +75,83 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于我
+              CF13C题解
             </h2>
             <div class="post-info">
               <span>
-                2021-08-04
+                2021-08-26
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
-              
-                <a href="https://20170952.github.io/Yxtbs.github.io/tag/8oWV8AUjQ/" class="post-tag">
-                  # 番外集合
-                </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://20170952.github.io/Yxtbs.github.io//post-images/guan-yu-wo.png" alt="">
+              <img class="post-feature-image" src="https://20170952.github.io/Yxtbs.github.io//post-images/cf13c-ti-jie.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>Who am I? Where am I? What am I doing?</p>
+                <p>Codeforces Beta Round #13</p>
 <!-- more -->
-<p>我，坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">(ZJ,NB)</mtext></mrow><annotation encoding="application/x-tex">\texttt{(ZJ,NB)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333299999999999em;vertical-align:-0.13889em;"></span><span class="mord text"><span class="mord texttt">(ZJ,NB)</span></span></span></span></span>，现在是一名初二的学生。<br>
-曾经的博客在<a href="https://www.cnblogs.com/Xsmyy/">这里</a>。<br>
-现在的博客在<a href="https://20170952.github.io/Yxtbs.github.io/">这里</a>。<br>
-兴趣爱好广泛，是一个喜欢搞文化课和其他竞赛的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">OIer</mtext></mrow><annotation encoding="application/x-tex">\texttt{OIer}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">OIer</span></span></span></span></span>。<br>
-现在的水平大概是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TG</mtext></mrow><annotation encoding="application/x-tex">\texttt{TG}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TG</span></span></span></span></span> 组。<br>
-希望大家能多多指教~~</p>
+<h1 id="csequence">C.Sequence</h1>
+<p>这道题目我们可以考虑直接上 STL<br>
+我们一个数一个数地放进一个大根堆(优先队列)<br>
+其实就是算到当前数时<br>
+取前面最大的数出来<br>
+假如现在这个数比前面最大数大或相等就没事<br>
+反之我们则需要考虑如何改为不降<br>
+我们肯定是将大的往小移，将小的往大移<br>
+那么花费一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|a-b|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span></span></span></span><br>
+为了不影响先前的答案<br>
+当然都是移到同一基准<br>
+即是先前的最大数<br>
+代码不难写出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+long long Total;
+priority_queue&lt; long long &gt;Queue;
+int main(void)
+{
+	BetterIO;
+	register long long i;cin&gt;&gt;Total;
+	register long long Ans(0);
+	for(i=1;i&lt;=Total;i++)
+	{
+		register long long Now;cin&gt;&gt;Now;
+		Queue.push(Now);
+		if(Queue.top()&gt;Now)
+		{
+			Ans+=Queue.top()-Now;
+			Queue.pop();
+			Queue.push(Now);
+		}
+	}
+	cout&lt;&lt;Ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#csequence">C.Sequence</a></li>
+</ul>
+
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://20170952.github.io/Yxtbs.github.io/post/cf594a-ti-jie/">
+              <h3 class="post-title">
+                CF594A题解
+              </h3>
+            </a>
+          </div>
         
 
         

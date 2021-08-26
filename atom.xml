@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-08-26T09:36:32.211Z</updated>
+    <updated>2021-08-26T10:40:38.536Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,209 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[P2893题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/p2893-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/p2893-ti-jie/">
+        </link>
+        <updated>2021-08-26T10:10:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>Luogu P2893</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Luogu P2893</p>
+<!-- more -->
+<h1 id="p2893usaco08febmaking-the-grade-g">P2893.[USACO08FEB]Making the Grade G</h1>
+<p>这道题目我们可以考虑直接上 STL<br>
+我们一个数一个数地放进一个大根堆(优先队列)<br>
+其实就是算到当前数时<br>
+取前面最大的数出来<br>
+假如现在这个数比前面最大数大或相等就没事<br>
+反之我们则需要考虑如何改为不降<br>
+我们肯定是将大的往小移，将小的往大移<br>
+那么花费一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|a-b|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span></span></span></span><br>
+为了不影响先前的答案<br>
+当然都是移到同一基准<br>
+即是先前的最大数<br>
+代码不难写出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+long long Total;
+priority_queue&lt; long long &gt;Queue;
+int main(void)
+{
+	BetterIO;
+	register long long i;cin&gt;&gt;Total;
+	register long long Ans(0);
+	for(i=1;i&lt;=Total;i++)
+	{
+		register long long Now;cin&gt;&gt;Now;
+		Queue.push(Now);
+		if(Queue.top()&gt;Now)
+		{
+			Ans+=Queue.top()-Now;
+			Queue.pop();
+			Queue.push(Now);
+		}
+	}
+	cout&lt;&lt;Ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[P4597题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/p4597-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/p4597-ti-jie/">
+        </link>
+        <updated>2021-08-26T10:10:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>Luogu P4597</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Luogu P4597</p>
+<!-- more -->
+<h1 id="p4597序列sequence">P4597.序列sequence</h1>
+<p>这道题目我们可以考虑直接上 STL<br>
+我们一个数一个数地放进一个大根堆(优先队列)<br>
+其实就是算到当前数时<br>
+取前面最大的数出来<br>
+假如现在这个数比前面最大数大或相等就没事<br>
+反之我们则需要考虑如何改为不降<br>
+我们肯定是将大的往小移，将小的往大移<br>
+那么花费一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|a-b|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span></span></span></span><br>
+为了不影响先前的答案<br>
+当然都是移到同一基准<br>
+即是先前的最大数<br>
+代码不难写出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+long long Total;
+priority_queue&lt; long long &gt;Queue;
+int main(void)
+{
+	BetterIO;
+	register long long i;cin&gt;&gt;Total;
+	register long long Ans(0);
+	for(i=1;i&lt;=Total;i++)
+	{
+		register long long Now;cin&gt;&gt;Now;
+		Queue.push(Now);
+		if(Queue.top()&gt;Now)
+		{
+			Ans+=Queue.top()-Now;
+			Queue.pop();
+			Queue.push(Now);
+		}
+	}
+	cout&lt;&lt;Ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CF713C题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf713c-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf713c-ti-jie/">
+        </link>
+        <updated>2021-08-26T10:10:04.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Round #371 (Div. 1)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Round #371 (Div. 1)</p>
+<!-- more -->
+<h1 id="csonya-and-problem-wihtout-a-legend">C.Sonya and Problem Wihtout a Legend</h1>
+<p>这道题目我们可以考虑直接上 STL<br>
+我们一个数一个数地放进一个大根堆(优先队列)<br>
+其实就是算到当前数时<br>
+取前面最大的数出来<br>
+假如现在这个数比前面最大数大或相等就没事<br>
+反之我们则需要考虑如何改为不降<br>
+我们肯定是将大的往小移，将小的往大移<br>
+那么花费一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|a-b|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span></span></span></span><br>
+为了不影响先前的答案<br>
+当然都是移到同一基准<br>
+即是先前的最大数<br>
+代码不难写出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+long long Total;
+priority_queue&lt; long long &gt;Queue;
+int main(void)
+{
+	BetterIO;
+	#ifndef ONLINE_JUDGE
+	freopen(&quot;IN.in&quot;,&quot;r&quot;,stdin);
+	#endif
+	register long long i;cin&gt;&gt;Total;
+	register long long Ans(0);
+	for(i=1;i&lt;=Total;i++)
+	{
+		register long long Now;cin&gt;&gt;Now,Now-=i;
+		Queue.push(Now);
+		if(Queue.top()&gt;Now)
+		{
+			Ans+=Queue.top()-Now;
+			Queue.pop();
+			Queue.push(Now);
+		}
+	}
+	cout&lt;&lt;Ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CF13C题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf13c-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf13c-ti-jie/">
+        </link>
+        <updated>2021-08-26T10:04:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Beta Round #13</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Beta Round #13</p>
+<!-- more -->
+<h1 id="csequence">C.Sequence</h1>
+<p>这道题目我们可以考虑直接上 STL<br>
+我们一个数一个数地放进一个大根堆(优先队列)<br>
+其实就是算到当前数时<br>
+取前面最大的数出来<br>
+假如现在这个数比前面最大数大或相等就没事<br>
+反之我们则需要考虑如何改为不降<br>
+我们肯定是将大的往小移，将小的往大移<br>
+那么花费一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|a-b|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span></span></span></span><br>
+为了不影响先前的答案<br>
+当然都是移到同一基准<br>
+即是先前的最大数<br>
+代码不难写出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+long long Total;
+priority_queue&lt; long long &gt;Queue;
+int main(void)
+{
+	BetterIO;
+	register long long i;cin&gt;&gt;Total;
+	register long long Ans(0);
+	for(i=1;i&lt;=Total;i++)
+	{
+		register long long Now;cin&gt;&gt;Now;
+		Queue.push(Now);
+		if(Queue.top()&gt;Now)
+		{
+			Ans+=Queue.top()-Now;
+			Queue.pop();
+			Queue.push(Now);
+		}
+	}
+	cout&lt;&lt;Ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF594A题解]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/cf594a-ti-jie/</id>
@@ -1045,24 +1248,6 @@ s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class=
 <li>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 为素数,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="double-struck">Z</mi></mrow><annotation encoding="application/x-tex">a\in \mathbb{Z}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">Z</span></span></span></span></span>,则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>a</mi><mi>p</mi></msup><mo>≡</mo><mi>a</mi><mspace></mspace><mspace width="0.4444444444444444em"/><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333333333333333em"/><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">a^p\equiv a\pmod{p}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444444444444444em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.3333333333333333em;"></span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span></li>
 <li>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 为素数,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>∈</mo><mi mathvariant="double-struck">Z</mi></mrow><annotation encoding="application/x-tex">a\in \mathbb{Z}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68889em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbb">Z</span></span></span></span></span>,则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>a</mi><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>≡</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mspace></mspace><mspace width="0.4444444444444444em"/><mo>(</mo><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mspace width="0.3333333333333333em"/><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">a^{p-1}\equiv 0,1\pmod{p}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mspace allowbreak"></span><span class="mspace" style="margin-right:0.4444444444444444em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">m</span><span class="mord mathrm">o</span><span class="mord mathrm">d</span></span></span><span class="mspace" style="margin-right:0.3333333333333333em;"></span><span class="mord mathdefault">p</span><span class="mclose">)</span></span></span></span></li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于我]]></title>
-        <id>https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/</id>
-        <link href="https://20170952.github.io/Yxtbs.github.io/post/guan-yu-wo/">
-        </link>
-        <updated>2021-08-04T14:18:27.000Z</updated>
-        <summary type="html"><![CDATA[<p>Who am I? Where am I? What am I doing?</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Who am I? Where am I? What am I doing?</p>
-<!-- more -->
-<p>我，坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">(ZJ,NB)</mtext></mrow><annotation encoding="application/x-tex">\texttt{(ZJ,NB)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333299999999999em;vertical-align:-0.13889em;"></span><span class="mord text"><span class="mord texttt">(ZJ,NB)</span></span></span></span></span>，现在是一名初二的学生。<br>
-曾经的博客在<a href="https://www.cnblogs.com/Xsmyy/">这里</a>。<br>
-现在的博客在<a href="https://20170952.github.io/Yxtbs.github.io/">这里</a>。<br>
-兴趣爱好广泛，是一个喜欢搞文化课和其他竞赛的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">OIer</mtext></mrow><annotation encoding="application/x-tex">\texttt{OIer}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">OIer</span></span></span></span></span>。<br>
-现在的水平大概是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TG</mtext></mrow><annotation encoding="application/x-tex">\texttt{TG}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TG</span></span></span></span></span> 组。<br>
-希望大家能多多指教~~</p>
 ]]></content>
     </entry>
 </feed>

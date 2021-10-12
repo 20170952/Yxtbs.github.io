@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CF574B题解 | 糖不甩</title>
+<link rel="shortcut icon" href="https://20170952.github.io/Yxtbs.github.io//favicon.ico?v=1634018257617">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://20170952.github.io/Yxtbs.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="CF574B题解 | 糖不甩 - Atom Feed" href="https://20170952.github.io/Yxtbs.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Codeforces Round #318 [RussianCodeCup Thanks-Round] (Div. 2)
+
+B.Bear and Three Musketeers
+Difficulty\mathtt{Difficulty}D..." />
+    <meta name="keywords" content="CF题解" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://20170952.github.io/Yxtbs.github.io/">
+  <img class="avatar" src="https://20170952.github.io/Yxtbs.github.io//images/avatar.png?v=1634018257617" alt="">
+  </a>
+  <h1 class="site-title">
+    糖不甩
+  </h1>
+  <p class="site-description">
+    长存不灭的过去，逐渐消逝的未来
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://20170952.github.io/Yxtbs.github.io/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://20170952.github.io/Yxtbs.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://20170952.github.io/Yxtbs.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              CF574B题解
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-10-12
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://20170952.github.io/Yxtbs.github.io/tag/OOOB6CzY7/" class="post-tag">
+                  # CF题解
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://20170952.github.io/Yxtbs.github.io//post-images/cf574b-ti-jie.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Codeforces Round #318 [RussianCodeCup Thanks-Round] (Div. 2)</p>
+<!-- more -->
+<h1 id="bbear-and-three-musketeers">B.Bear and Three Musketeers</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1500</mn></mrow><annotation encoding="application/x-tex">\mathtt{1500}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">5</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+<s>使用暴力可以通过本题。</s><br>
+我们考虑暴力枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个点，<br>
+条件为两两之间都有连边，<br>
+然后取这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个点的度数之和的最小值。<br>
+因为不包括这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个点本身，<br>
+所以最终答案还要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">-6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">6</span></span></span></span>。<br>
+<strong>但是</strong>，<br>
+这样写会得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TLE</mtext></mrow><annotation encoding="application/x-tex">\texttt{TLE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TLE</span></span></span></span></span>，<br>
+不难想到一个基础的剪枝，<br>
+就是如果选的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个点已经没有连边，<br>
+就直接 <code>break</code> 掉。<br>
+代码就不难写出了。</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+int N,M,Deg[4001];
+bool Map[4001][4001];
+int main(void)
+{
+	BetterIO;
+	register int i,j,k;cin&gt;&gt;N&gt;&gt;M;
+	for(i=1;i&lt;=M;i++)
+	{
+		register int U,V;cin&gt;&gt;U&gt;&gt;V;
+		Map[U][V]=Map[V][U]=true,Deg[U]++,Deg[V]++;
+	}
+	register int Ret(INT_MAX);
+	for(i=1;i&lt;=N;i++)for(j=i+1;j&lt;=N;j++)if(Map[i][j])for(k=j+1;k&lt;=N;k++)if(Map[i][j]&amp;&amp;Map[i][k]&amp;&amp;Map[j][k])Ret=min(Ret,Deg[i]+Deg[j]+Deg[k]);
+	if(Ret==INT_MAX)Ret=5;
+	cout&lt;&lt;Ret-6&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#bbear-and-three-musketeers">B.Bear and Three Musketeers</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://20170952.github.io/Yxtbs.github.io/post/cf965d-ti-jie/">
+              <h3 class="post-title">
+                CF965D题解
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  __EOF__
+  <a class="rss" href="https://20170952.github.io/Yxtbs.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-08-28T02:08:56.998Z</updated>
+    <updated>2021-10-12T05:57:56.180Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,97 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[CF574B题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf574b-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf574b-ti-jie/">
+        </link>
+        <updated>2021-10-12T05:55:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Round #318 [RussianCodeCup Thanks-Round] (Div. 2)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Round #318 [RussianCodeCup Thanks-Round] (Div. 2)</p>
+<!-- more -->
+<h1 id="bbear-and-three-musketeers">B.Bear and Three Musketeers</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1500</mn></mrow><annotation encoding="application/x-tex">\mathtt{1500}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">5</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+<s>使用暴力可以通过本题。</s><br>
+我们考虑暴力枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个点，<br>
+条件为两两之间都有连边，<br>
+然后取这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个点的度数之和的最小值。<br>
+因为不包括这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span> 个点本身，<br>
+所以最终答案还要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">-6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">6</span></span></span></span>。<br>
+<strong>但是</strong>，<br>
+这样写会得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TLE</mtext></mrow><annotation encoding="application/x-tex">\texttt{TLE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TLE</span></span></span></span></span>，<br>
+不难想到一个基础的剪枝，<br>
+就是如果选的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个点已经没有连边，<br>
+就直接 <code>break</code> 掉。<br>
+代码就不难写出了。</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+int N,M,Deg[4001];
+bool Map[4001][4001];
+int main(void)
+{
+	BetterIO;
+	register int i,j,k;cin&gt;&gt;N&gt;&gt;M;
+	for(i=1;i&lt;=M;i++)
+	{
+		register int U,V;cin&gt;&gt;U&gt;&gt;V;
+		Map[U][V]=Map[V][U]=true,Deg[U]++,Deg[V]++;
+	}
+	register int Ret(INT_MAX);
+	for(i=1;i&lt;=N;i++)for(j=i+1;j&lt;=N;j++)if(Map[i][j])for(k=j+1;k&lt;=N;k++)if(Map[i][j]&amp;&amp;Map[i][k]&amp;&amp;Map[j][k])Ret=min(Ret,Deg[i]+Deg[j]+Deg[k]);
+	if(Ret==INT_MAX)Ret=5;
+	cout&lt;&lt;Ret-6&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CF965D题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf965d-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf965d-ti-jie/">
+        </link>
+        <updated>2021-10-12T05:52:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Round #476 (Div. 2) [Thanks, Telegram!]</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Round #476 (Div. 2) [Thanks, Telegram!]</p>
+<!-- more -->
+<h1 id="dsingle-use-stones">D.Single-use Stones</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1900</mn></mrow><annotation encoding="application/x-tex">\mathtt{1900}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">9</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+先说结论：</p>
+<blockquote>
+<p>最多通过的青蛙的数量就是每个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间中石头数量的最小值。</p>
+</blockquote>
+<p>我们考虑一段长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间，<br>
+因为青蛙最多跳 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的距离，<br>
+不难想到，每只青蛙都一定会在这个区间落下至少一次。<br>
+因为一定可以从另一个石子数大于等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的区间跳过来，<br>
+所以这样取出的答案是可行的。<br>
+那么我们就得到了结论：</p>
+<blockquote>
+<p>最多通过的青蛙的数量就是每个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间中石头数量的最小值。</p>
+</blockquote>
+<p>代码就不难写出了。</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+int W,L,A[100001],Prefix[100001];
+int main(void)
+{
+	BetterIO;
+	register int i;cin&gt;&gt;W&gt;&gt;L;
+	for(i=1;i&lt;W;i++)cin&gt;&gt;A[i];
+	for(i=1;i&lt;W;i++)Prefix[i]=Prefix[i-1]+A[i];
+	register int Ret(INT_MAX);
+	for(i=0;i+L&lt;W;i++)Ret=min(Ret,Prefix[i+L]-Prefix[i]);
+	cout&lt;&lt;Ret&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF1147C题解]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/cf1147c-ti-jie/</id>
@@ -21,7 +112,8 @@
         <content type="html"><![CDATA[<p>Forethought Future Cup - Final Round (Onsite Finalists Only)</p>
 <!-- more -->
 <h1 id="cthanos-nim">C.Thanos Nim</h1>
-<p>先说结论：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2000</mn></mrow><annotation encoding="application/x-tex">\mathtt{2000}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+先说结论：</p>
 <blockquote>
 <p>如果石子最小堆数量不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>n</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 时，先手必胜，反之后手必胜</p>
 </blockquote>
@@ -170,7 +262,8 @@ int main(void)
         <content type="html"><![CDATA[<p>Codeforces Round #371 (Div. 1)</p>
 <!-- more -->
 <h1 id="csonya-and-problem-wihtout-a-legend">C.Sonya and Problem Wihtout a Legend</h1>
-<p>这道题目我们可以考虑直接上 STL<br>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2300</mn></mrow><annotation encoding="application/x-tex">\mathtt{2300}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">3</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+这道题目我们可以考虑直接上 STL<br>
 我们一个数一个数地放进一个大根堆(优先队列)<br>
 其实就是算到当前数时<br>
 取前面最大的数出来<br>
@@ -223,7 +316,8 @@ int main(void)
         <content type="html"><![CDATA[<p>Codeforces Beta Round #13</p>
 <!-- more -->
 <h1 id="csequence">C.Sequence</h1>
-<p>这道题目我们可以考虑直接上 STL<br>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2200</mn></mrow><annotation encoding="application/x-tex">\mathtt{2200}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">2</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+这道题目我们可以考虑直接上 STL<br>
 我们一个数一个数地放进一个大根堆(优先队列)<br>
 其实就是算到当前数时<br>
 取前面最大的数出来<br>
@@ -519,278 +613,6 @@ signed main(void)
 </tr>
 </tbody>
 </table>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CF1557场题解]]></title>
-        <id>https://20170952.github.io/Yxtbs.github.io/post/cf1557-chang-ti-jie/</id>
-        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf1557-chang-ti-jie/">
-        </link>
-        <updated>2021-08-10T08:11:46.000Z</updated>
-        <summary type="html"><![CDATA[<p>Codeforces Round #737 (Div. 2)</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Codeforces Round #737 (Div. 2)</p>
-<!-- more -->
-<h1 id="aezzat-and-two-subsequences">A.Ezzat and Two Subsequences</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">800</mn></mrow><annotation encoding="application/x-tex">\mathtt{800}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">8</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-看完题目后，我们并不知道最优解该如何构造<br>
-然后我们观察样例及解释：</p>
-<ul>
-<li>第一组，最终是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{1,2\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mclose">}</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mn>3</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{3\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">3</span><span class="mclose">}</span></span></span></span></li>
-<li>第二组，最终是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mo>−</mo><mn>6</mn><mo separator="true">,</mo><mo>−</mo><mn>7</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{-6,-7\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">−</span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">7</span><span class="mclose">}</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mo>−</mo><mn>6</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{-6\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">−</span><span class="mord">6</span><span class="mclose">}</span></span></span></span></li>
-</ul>
-<p>然后我们不难得到一个猜想：</p>
-<blockquote>
-<p>将最大的数单独为一组，其余为一组</p>
-</blockquote>
-<p>代码实现简单<br>
-至于证明，我有一个很妙的解法，但是这里太小了，写不下😆</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-int N,A[100001];
-#define int long long
-main(void)
-{
-	BetterIO;
-	register int Case;cin&gt;&gt;Case;while(Case--)
-	{
-		register int i;cin&gt;&gt;N;
-		for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
-		sort(A+1,A+N+1);
-		register int Sum=0;
-		for(i=1;i&lt;N;i++)Sum+=A[i];
-		printf(&quot;%.9lf\n&quot;,1.0*Sum/(N-1)+1.0*A[N]);
-	}
-	return 0;
-}
-</code></pre>
-<h1 id="bmoamen-and-k-subarrays">B.Moamen and k-subarrays</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1100</mn></mrow><annotation encoding="application/x-tex">\mathtt{1100}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">1</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-看完题目后，我们得到一个猜想：</p>
-<blockquote>
-<p>只要将原串分成递增的小段即可</p>
-</blockquote>
-<p>但是我们轻而易举地 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mi>a</mi><mi>c</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">hack</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 掉了<br>
-比如说前面有一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mn>3</mn><mo separator="true">,</mo><mn>6</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{3,6\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">6</span><span class="mclose">}</span></span></span></span> 后面有一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mn>4</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{4\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">4</span><span class="mclose">}</span></span></span></span> 就炸掉了<br>
-于是我们稍加改进，不难得到：</p>
-<blockquote>
-<p>只要将原串分成递增的小段且是排完序紧挨的即可</p>
-</blockquote>
-<p>然后可以用 pair 来优化写法，于是代码不难写出</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-int N,K,A[100001];
-pair&lt; int,int &gt;B[100001];
-int main(void)
-{
-	BetterIO;
-	register int Case;cin&gt;&gt;Case;while(Case--)
-	{
-		register int i;cin&gt;&gt;N&gt;&gt;K;
-		for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
-		for(i=1;i&lt;=N;i++)B[i].first=A[i],B[i].second=i;
-		sort(B+1,B+N+1);
-		register int Ans=0;
-		for(i=2;i&lt;=N;i++)if(B[i].second!=B[i-1].second+1)Ans++;
-		if(Ans&lt;K)puts(&quot;YES&quot;);
-		else puts(&quot;NO&quot;);
-	}
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CF1555场题解]]></title>
-        <id>https://20170952.github.io/Yxtbs.github.io/post/cf1555-chang-ti-jie/</id>
-        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf1555-chang-ti-jie/">
-        </link>
-        <updated>2021-08-05T04:37:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>Educational Codeforces Round 112 (Rated for Div. 2)</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Educational Codeforces Round 112 (Rated for Div. 2)</p>
-<!-- more -->
-<h1 id="apizzaforces">A.PizzaForces</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">900</mn></mrow><annotation encoding="application/x-tex">\mathtt{900}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">9</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-首先我们来枚举一下，得知：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 及以上的偶数都会刚好分完<br>
-而且每个披萨的性价比是一样的<br>
-那么，我们可以这样考虑：</p>
-<ul>
-<li>如果人数不多于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 人，那么也要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>15</mn></mrow><annotation encoding="application/x-tex">15</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">5</span></span></span></span> 分钟</li>
-<li>如果人数多于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 人且为偶数，那么肯定可以刚好吃完，没有多余</li>
-<li>如果人数多于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 人且为奇数，那么一定会剩下一个人的量<br>
-然后就不难写出代码了</li>
-</ul>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-#define int long long
-signed main(void)
-{
-    register int Case;cin&gt;&gt;Case;while(Case--)
-    {
-        register int N;cin&gt;&gt;N;
-        if(N&lt;=6)cout&lt;&lt;15&lt;&lt;endl;
-        else if(N&amp;1)cout&lt;&lt;(N+1)/2*5&lt;&lt;endl;
-        else cout&lt;&lt;N/2*5&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre>
-<h1 id="btwo-tables">B.Two Tables</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1300</mn></mrow><annotation encoding="application/x-tex">\mathtt{1300}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">3</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-肯定是横着平移或者竖着平移才有可能作为最短距离<br>
-不难发现，我们一定只能把它移到边界上<br>
-那么我们不妨枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> 条边，然后依次判是否可行<br>
-最后再取一下答案即可<br>
-然后就不难写出代码了</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-int N,M,A,B,C,D,E,F,P,Q;
-signed main(void)
-{
-    register int Case;cin&gt;&gt;Case;while(Case--)
-    {
-        cin&gt;&gt;N&gt;&gt;M&gt;&gt;A&gt;&gt;B&gt;&gt;C&gt;&gt;D&gt;&gt;E&gt;&gt;F;
-        register int Ans=1000000000;
-        P=abs(A-C),Q=abs(B-D);
-        if(P+E&lt;=N)Ans=min(Ans,min(max(0,E-N+max(A,C)),max(0,E-min(A,C))));
-        if(Q+F&lt;=M)Ans=min(Ans,min(max(0,F-M+max(B,D)),max(0,F-min(B,D))));
-        if(Ans&gt;=99999999)cout&lt;&lt;-1&lt;&lt;endl;
-        else cout&lt;&lt;Ans&lt;&lt;&quot;.000000&quot;&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre>
-<h1 id="ccoin-rows">C.Coin Rows</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1300</mn></mrow><annotation encoding="application/x-tex">\mathtt{1300}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">3</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-看懂题目之后，我们来观察样例<br>
-我们提出一个猜想：Bob 只能先一直往右，再一直往下或是先一直往下，再一直往右<br>
-然后我们考虑分别用前缀和维护一下，不然会 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TLE</mtext></mrow><annotation encoding="application/x-tex">\texttt{TLE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TLE</span></span></span></span></span><br>
-维护完之后，暴力枚举 Alice 的路线即可<br>
-然后就不难写出代码了</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-#define int long long
-int N;
-int Dp1[100001],Dp2[100001];
-signed main(void)
-{
-    register int Case;cin&gt;&gt;Case;while(Case--)
-    {
-        register int i;cin&gt;&gt;N;
-        for(i=1;i&lt;=N;i++)Dp1[i]=Dp2[i]=0;
-        for(i=1;i&lt;=N;i++){register int X;cin&gt;&gt;X;Dp1[i]=Dp1[i-1]+X;}
-        for(i=1;i&lt;=N;i++){register int X;cin&gt;&gt;X;Dp2[i]=Dp2[i-1]+X;}
-        register int Ans;
-        Ans=min(Dp1[N]-Dp1[1],Dp2[N-1]);
-        for(i=2;i&lt;N;i++)Ans=min(Ans,max(Dp1[N]-Dp1[i],Dp2[i-1]));
-        if(N==1)Ans=0;
-        cout&lt;&lt;Ans&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre>
-<h1 id="dsay-no-to-palindromes">D.Say No to Palindromes</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1600</mn></mrow><annotation encoding="application/x-tex">\mathtt{1600}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">6</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-这道题放在第四道，差评！<br>
-实际上，看懂题目之后，我们不难想到一个结论：</p>
-<blockquote>
-<p>该字符串一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a,b,c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span></span></span></span> 的一个排列不断重复</p>
-</blockquote>
-<p>然后我们干脆暴力枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span></span></span></span> 种情况，但是我们会发现自己 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">TLE</mtext></mrow><annotation encoding="application/x-tex">\texttt{TLE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">TLE</span></span></span></span></span> 了<br>
-于是我们考虑加上一个前缀和维护，然后差分一把答案即可<br>
-然后就不难写出代码了</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-int N,M;
-string S,S0[7]={&quot;&quot;,&quot;abc&quot;,&quot;acb&quot;,&quot;bac&quot;,&quot;bca&quot;,&quot;cab&quot;,&quot;cba&quot;};
-int Prefix[7][200011];
-int main(void)
-{
-    register int i,j;cin&gt;&gt;N&gt;&gt;M;cin&gt;&gt;S;S=&quot;@&quot;+S;
-    for(i=1;i&lt;=6;i++)
-    {
-        for(j=1;j&lt;=N;j++)if(S0[i][(j-1)%3]!=S[j])Prefix[i][j]=Prefix[i][j-1]+1;
-                         else Prefix[i][j]=Prefix[i][j-1];
-    }
-    while(M--)
-    {
-        register int Left,Right;cin&gt;&gt;Left&gt;&gt;Right;
-        register int Ans=Right-Left+1;
-        for(i=1;i&lt;=6;i++)Ans=min(Ans,Prefix[i][Right]-Prefix[i][Left-1]);
-        cout&lt;&lt;Ans&lt;&lt;endl;
-    }
-    return 0;
-}
-</code></pre>
-<h1 id="eboring-segments">E.Boring Segments</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2100</mn></mrow><annotation encoding="application/x-tex">\mathtt{2100}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">1</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-题意是最小化最大值和最小值的差，不难想到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">two-pointer</mtext></mrow><annotation encoding="application/x-tex">\texttt{two-pointer}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord text"><span class="mord texttt">two-pointer</span></span></span></span></span><br>
-枚举左端点，然后把上次的右端点继续向右移动即可<br>
-我们不妨使用线段树来维护这个区间<br>
-插入、删除就是在线段树 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[l,r-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 上加减，维护区间<br>
-时间复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(n\log m)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></span>，想必是正解吧</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-struct Struct
-{
-    int Left,Right,Value;
-    inline bool operator &lt;(const Struct &amp;Compare)const
-    {
-        return Value&lt;Compare.Value;
-    }
-};
-struct Node
-{
-    int Tmp,Tag;
-};
-int N,M;
-Struct S[1000010];
-Node C[4000040];
-inline void Pd(int Rt)
-{
-    if(C[Rt].Tag)
-    {
-        C[Rt*2].Tag+=C[Rt].Tag;
-        C[Rt*2+1].Tag+=C[Rt].Tag;
-        C[Rt*2].Tmp+=C[Rt].Tag;
-        C[Rt*2+1].Tmp+=C[Rt].Tag;
-    }
-    C[Rt].Tag=0;
-}
-inline void Pu(int Rt)
-{
-    C[Rt].Tmp=min(C[Rt*2].Tmp,C[Rt*2+1].Tmp);
-}
-inline void Add(int Rt,int L,int R,int LL,int RR,int VV)
-{
-    if(L&gt;=LL&amp;&amp;R&lt;=RR){C[Rt].Tag+=VV,C[Rt].Tmp+=VV;return;}
-    Pd(Rt);
-    if((L+R&gt;&gt;1)&gt;=LL)Add(Rt*2,L,(L+R&gt;&gt;1),LL,RR,VV);
-    if((L+R&gt;&gt;1)&lt;RR)Add(Rt*2+1,(L+R&gt;&gt;1)+1,R,LL,RR,VV);
-    Pu(Rt);
-}
-int main(void)
-{
-    register int i,Cnt=0,Ans=INT_MAX,T=0;
-    cin&gt;&gt;N&gt;&gt;M,M--;
-    for(i=1;i&lt;=N;i++)cin&gt;&gt;S[i].Left&gt;&gt;S[i].Right&gt;&gt;S[i].Value,S[i].Right--;
-    sort(S+1,S+N+1);
-    while(!C[1].Tmp)Cnt++,Add(1,1,M,S[Cnt].Left,S[Cnt].Right,1);
-    Add(1,1,M,S[Cnt].Left,S[Cnt].Right,-1);
-    for(i=Cnt;i&lt;=N;i++)
-    {
-        Add(1,1,M,S[i].Left,S[i].Right,1);
-        while(C[1].Tmp)T++,Add(1,1,M,S[T].Left,S[T].Right,-1);
-        Add(1,1,M,S[T].Left,S[T].Right,1);
-        Ans=min(Ans,S[i].Value-S[T].Value),T--;
-    }
-    cout&lt;&lt;Ans&lt;&lt;endl;
-    return 0;
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>

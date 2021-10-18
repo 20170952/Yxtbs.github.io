@@ -1,0 +1,225 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CF578B题解 | 糖不甩</title>
+<link rel="shortcut icon" href="https://20170952.github.io/Yxtbs.github.io//favicon.ico?v=1634568862771">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://20170952.github.io/Yxtbs.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="CF578B题解 | 糖不甩 - Atom Feed" href="https://20170952.github.io/Yxtbs.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="Codeforces Round #320 (Div. 1) [Bayan Thanks-Round]
+
+B.&quot;Or&quot; Game
+Difficulty\mathtt{Difficulty}Difficulty=1700\..." />
+    <meta name="keywords" content="CF题解" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://20170952.github.io/Yxtbs.github.io/">
+  <img class="avatar" src="https://20170952.github.io/Yxtbs.github.io//images/avatar.png?v=1634568862771" alt="">
+  </a>
+  <h1 class="site-title">
+    糖不甩
+  </h1>
+  <p class="site-description">
+    长存不灭的过去，逐渐消逝的未来
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://20170952.github.io/Yxtbs.github.io/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://20170952.github.io/Yxtbs.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://20170952.github.io/Yxtbs.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              CF578B题解
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-10-18
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://20170952.github.io/Yxtbs.github.io/tag/OOOB6CzY7/" class="post-tag">
+                  # CF题解
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://20170952.github.io/Yxtbs.github.io//post-images/cf578b-ti-jie.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Codeforces Round #320 (Div. 1) [Bayan Thanks-Round]</p>
+<!-- more -->
+<h1 id="bor-game">B.&quot;Or&quot; Game</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1700</mn></mrow><annotation encoding="application/x-tex">\mathtt{1700}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">7</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+不难发现，将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">x^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> 乘在同一个数上一定最优。<br>
+首先我们有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">O</mi><mo>(</mo><msup><mi>n</mi><mn mathvariant="script">2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{O(n^2)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathcal mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span> 的暴力算法。<br>
+于是我们考虑如何优化。<br>
+因为每次变化的只有一个数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<br>
+所以我们不妨记录前缀或和后缀或，<br>
+然后枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub><mo>×</mo><msup><mi>x</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">a_i\times x^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.849108em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> 即可得到答案。<br>
+即：<code>Ans=max(Ans,(A[i]*Ret)|Pre[i-1]|Nxt[i+1])</code></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+#define int long long
+int N,K,X,A[200001],Pre[200001],Nxt[200001];
+signed main(void)
+{
+	register int i;cin&gt;&gt;N&gt;&gt;K&gt;&gt;X;
+	for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
+	register int Ret=1;
+	while(K--)Ret*=X;
+	for(i=1;i&lt;=N;i++)Pre[i]=Pre[i-1]|A[i];
+	for(i=N;i&gt;=1;i--)Nxt[i]=Nxt[i+1]|A[i];
+	register int Ans=0;
+	for(i=1;i&lt;=N;i++)Ans=max(Ans,(A[i]*Ret)|Pre[i-1]|Nxt[i+1]);
+	cout&lt;&lt;Ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#bor-game">B.&quot;Or&quot; Game</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://20170952.github.io/Yxtbs.github.io/post/cf1055e-ti-jie/">
+              <h3 class="post-title">
+                CF1055E题解
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  __EOF__
+  <a class="rss" href="https://20170952.github.io/Yxtbs.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,10 +1,10 @@
-<html>
+<html lang="zh">
 <head>
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>CF965D题解 | Joker&#39;s Blog</title>
+<title>关于 - Joker&#39;s Blog</title>
 
 <link rel="shortcut icon" href="https://20170952.github.io/Yxtbs.github.io//favicon.ico?v=1634616680291">
 
@@ -33,7 +33,7 @@
 <!--<script src="media/scripts/index.js"></script>-->
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
@@ -97,72 +97,14 @@
     }
 </script>
     <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
+        <div class="post-detail">
             <article class="gt-post-content">
-                <h2 class="post-title">
-                    CF965D题解
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2021-10-12 ·
-                    </time>
-                    
-                        <a href="https://20170952.github.io/Yxtbs.github.io/tag/OOOB6CzY7/" class="post-tags">
-                            # CF题解
-                        </a>
-                    
-                </div>
                 <div class="post-content">
-                    <p>Codeforces Round #476 (Div. 2) [Thanks, Telegram!]</p>
-<!-- more -->
-<h1 id="dsingle-use-stones">D.Single-use Stones</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1900</mn></mrow><annotation encoding="application/x-tex">\mathtt{1900}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">9</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-先说结论：</p>
-<blockquote>
-<p>最多通过的青蛙的数量就是每个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间中石头数量的最小值。</p>
-</blockquote>
-<p>我们考虑一段长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间，<br>
-因为青蛙最多跳 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的距离，<br>
-不难想到，每只青蛙都一定会在这个区间落下至少一次。<br>
-因为一定可以从另一个石子数大于等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的区间跳过来，<br>
-所以这样取出的答案是可行的。<br>
-那么我们就得到了结论：</p>
-<blockquote>
-<p>最多通过的青蛙的数量就是每个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间中石头数量的最小值。</p>
-</blockquote>
-<p>代码就不难写出了。</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-int W,L,A[100001],Prefix[100001];
-int main(void)
-{
-	BetterIO;
-	register int i;cin&gt;&gt;W&gt;&gt;L;
-	for(i=1;i&lt;W;i++)cin&gt;&gt;A[i];
-	for(i=1;i&lt;W;i++)Prefix[i]=Prefix[i-1]+A[i];
-	register int Ret(INT_MAX);
-	for(i=0;i+L&lt;W;i++)Ret=min(Ret,Prefix[i+L]-Prefix[i]);
-	cout&lt;&lt;Ret&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-
+                    
                 </div>
             </article>
         </div>
-
-        
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://20170952.github.io/Yxtbs.github.io/post/cf1147c-ti-jie/" class="post-title gt-a-link">
-                    CF1147C题解
-                </a>
-            </div>
-        
-
-        
-
+        <br>
         
             
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css">
@@ -209,11 +151,11 @@ int main(void)
 </script>
 
             
-
             
         
 
         
+
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">乘上与平时相反的列车，为了去见从未见过的风景。</div>

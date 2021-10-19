@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-10-18T14:54:26.030Z</updated>
+    <updated>2021-10-19T01:08:22.145Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,87 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[CF1304E题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf1304e-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf1304e-ti-jie/">
+        </link>
+        <updated>2021-10-19T01:00:59.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Round #620 (Div. 2)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Round #620 (Div. 2)</p>
+<!-- more -->
+<h1 id="e1-trees-and-queries">E.1-Trees and Queries</h1>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2000</mn></mrow><annotation encoding="application/x-tex">\mathtt{2000}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
+这道题目其实并没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2000</mn></mrow><annotation encoding="application/x-tex">\mathtt{2000}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span> 的难度。<br>
+对于每一次询问，我们不妨进行分类讨论：</p>
+<ul>
+<li>在原有的路径上走过去。</li>
+<li>利用新增的边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> 走过去。</li>
+</ul>
+<p>首先对于第一种情况，</p>
+<p>我们显然是进行树上差分，即：</p>
+<p><code>Dist(X,Y)=Deep[X]+Deep[Y]-(Deep[GetLCA(X,Y)]&lt;&lt;1)</code>。</p>
+<p>而对于后一种情况，</p>
+<p>我们不难想到是  <code>Dist(A,X)+Dist(B,Y)+1</code>，</p>
+<p>或是 <code>Dist(A,Y)+Dist(B,X)+1</code>。</p>
+<p>那么代码不难写出。</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+#define MAX 100001
+struct Struct{int To,Next;}Edge[MAX&lt;&lt;1];
+int N,Head[MAX],Deep[MAX],Jump[MAX][21],Count;
+inline void AddEdge(int U,int V){Edge[Count].To=V,Edge[Count].Next=Head[U],Head[U]=Count++;}
+inline void Dfs(int Now,int Father)
+{
+    register int i;
+    Deep[Now]=Deep[Father]+1,Jump[Now][0]=Father;
+    for(i=1;(1&lt;&lt;i)&lt;=Deep[Now];i++)Jump[Now][i]=Jump[Jump[Now][i-1]][i-1];
+    for(i=Head[Now];~i;i=Edge[i].Next)
+    {	
+        register int To(Edge[i].To);
+        if(To!=Father)Dfs(To,Now);
+    }
+}    
+inline int GetLCA(int A,int B)
+{
+    if(Deep[A]&gt;Deep[B])swap(A,B);
+    register int i;
+    for(i=20;i&gt;=0;i--)if(Deep[A]&lt;=Deep[B]-(1&lt;&lt;i))B=Jump[B][i];
+    if(A==B)return A;
+    for(i=20;i&gt;=0;i--)
+    {
+        if(Jump[A][i]==Jump[B][i])continue;
+        A=Jump[A][i],B=Jump[B][i];
+    }
+    return Jump[A][0];
+}
+inline int Dist(int X,int Y){return Deep[X]+Deep[Y]-2*Deep[GetLCA(X,Y)];}
+int main(void)
+{
+	BetterIO;
+	register int i;cin&gt;&gt;N;
+	memset(Head,-1,sizeof(Head));
+	for(i=1;i&lt;N;i++)
+	{
+		register int U,V;cin&gt;&gt;U&gt;&gt;V;
+		AddEdge(U,V);
+		AddEdge(V,U);
+	}
+	Dfs(1,0);
+	register int Q;cin&gt;&gt;Q;while(Q--)
+	{
+		register int X,Y,A,B,K;cin&gt;&gt;X&gt;&gt;Y&gt;&gt;A&gt;&gt;B&gt;&gt;K;
+		register int D1(Dist(A,B)),D2(Dist(A,X)+Dist(B,Y)+1),D3(Dist(A,Y)+Dist(B,X)+1);
+		if((K&gt;=D1&amp;&amp;!((K-D1)%2))||(K&gt;=D2&amp;&amp;!((K-D2)%2))||(K&gt;=D3&amp;&amp;!((K-D3)%2)))puts(&quot;YES&quot;);
+		else puts(&quot;NO&quot;);
+	}
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF578B题解]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/cf578b-ti-jie/</id>
@@ -442,56 +523,6 @@ int main(void)
 			Queue.push(Now);
 		}
 	}
-	cout&lt;&lt;Ans&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CF594A题解]]></title>
-        <id>https://20170952.github.io/Yxtbs.github.io/post/cf594a-ti-jie/</id>
-        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf594a-ti-jie/">
-        </link>
-        <updated>2021-08-26T05:25:51.000Z</updated>
-        <summary type="html"><![CDATA[<p>Codeforces Round #330 (Div. 1)</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Codeforces Round #330 (Div. 1)</p>
-<!-- more -->
-<h1 id="awarrior-and-archer">A.Warrior and Archer</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2300</mn></mrow><annotation encoding="application/x-tex">\mathtt{2300}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">3</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-这道题目其实算是一道结论题<br>
-我们首先将序列排个序<br>
-因为 A 要使两点距离尽可能近<br>
-然而 B 要使两点距离尽可能远<br>
-我们首先想到：</p>
-<ul>
-<li>A 肯定从两边开始取</li>
-<li>B 肯定从中间开始取</li>
-</ul>
-<p>这样破坏道只剩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个点的时候<br>
-因为一共少了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> 个点<br>
-所以每人取了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>n</mi><mn>2</mn></mfrac><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\frac{n}{2}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 个点<br>
-然后我们就得到了这道题的核心结论,即：</p>
-<blockquote>
-<p>枚举距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>n</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> 的点，再取最小值即可</p>
-</blockquote>
-<p>代码不难写出</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-int N,A[200001];
-int main(void)
-{
-	BetterIO;
-	#ifndef ONLINE_JUDGE
-	freopen(&quot;IN.in&quot;,&quot;r&quot;,stdin);
-	#endif
-	register int i,j;cin&gt;&gt;N;
-	for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
-	sort(A+1,A+N+1);
-	register int Ans(INT_MAX);
-	for(i=1;(j=i+N/2)&lt;=N;i++)Ans=min(Ans,A[j]-A[i]);
 	cout&lt;&lt;Ans&lt;&lt;endl;
 	return 0;
 }

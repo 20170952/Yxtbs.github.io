@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>Joker&apos;s Blog</title>
-    <updated>2021-10-19T12:06:08.944Z</updated>
+    <updated>2021-10-19T12:07:02.013Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -24,7 +24,7 @@
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1800</mn></mrow><annotation encoding="application/x-tex">\mathtt{1800}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">8</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
 这道题目不难想到用二分答案解决，<br>
 我们考虑二分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">boss</mtext></mrow><annotation encoding="application/x-tex">\texttt{boss}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">boss</span></span></span></span></span> 死亡的时间，<br>
-不难得到式子<code>Hit=T/X+T/Y</code>。<br>
+不难得到式子 <code>Hit=T/X+T/Y</code>。<br>
 而显然这个东西是具有单调性的，<br>
 所以我们的算法没有假。<br>
 而知道时间以后，<br>

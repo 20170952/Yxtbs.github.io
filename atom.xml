@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>Joker&apos;s Blog</title>
-    <updated>2021-10-19T12:39:53.360Z</updated>
+    <updated>2021-10-19T14:09:57.231Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -16,12 +16,9 @@
         <link href="https://20170952.github.io/Yxtbs.github.io/post/gwoi-round1zhimaoi-round-9-csp-ru-men-zu-mo-ni-sai-sai-hou-zong-jie/">
         </link>
         <updated>2021-10-19T12:29:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>GwOI Round1/ZhimaOI Round #9 CSP入门组模拟赛题解</p>
-]]></summary>
         <content type="html"><![CDATA[<p>GwOI Round1/ZhimaOI Round #9 CSP入门组模拟赛题解</p>
-<!-- more -->
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/s6ozu5pj.png" alt="" loading="lazy"><br>
-<s>比赛终于结束了，相信大家都 <strong>AK</strong> 了</s><br>
+<!-- more -->=
+<p><s>比赛终于结束了，相信大家都 <strong>AK</strong> 了</s><br>
 本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">solution</mtext></mrow><annotation encoding="application/x-tex">\texttt{solution}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">solution</span></span></span></span></span> 由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Ghosted</mtext></mrow><annotation encoding="application/x-tex">\texttt{Ghosted}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Ghosted</span></span></span></span></span> 编写。</p>
 <h3 id="a小黑与统计">A.小黑与统计</h3>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext mathvariant="monospace">Author:Ghosted</mtext></mrow><annotation encoding="application/x-tex">\texttt{Author:Ghosted}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord text"><span class="mord texttt">Author:Ghosted</span></span></span></span></span><br>

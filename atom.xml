@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>糖不甩</title>
-    <updated>2021-10-19T01:08:22.145Z</updated>
+    <updated>2021-10-19T01:17:32.775Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 糖不甩</rights>
+    <entry>
+        <title type="html"><![CDATA[CF1004C题解]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/cf1004c-ti-jie/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf1004c-ti-jie/">
+        </link>
+        <updated>2021-10-19T01:09:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>Codeforces Round #495 (Div. 2)</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Codeforces Round #495 (Div. 2)</p>
+<!-- more -->
+<h1 id="csonya-and-robots">C.Sonya and Robots</h1>
+<p>这道题目唯一的问题就是如何去重。<br>
+首先，对于数列中两个相同的数，<br>
+前面元素所成的数对，<br>
+后面元素一定都能造出。<br>
+那么我们就有了一个思路，<br>
+相同的数只需要算最后一个，<br>
+而前面的显然全部重复。<br>
+可以使用 set 维护，<br>
+然后代码就不难写出了。</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+#define BetterIO ios::sync_with_stdio(false)
+using namespace std;
+#define int long long
+#define MAX 100001
+int N,Ret,A[MAX],Cnt[MAX];
+set&lt; int &gt;Set;
+signed main(void)
+{
+	BetterIO;
+	register int i;cin&gt;&gt;N;
+	for(i=1;i&lt;=N;i++)cin&gt;&gt;A[i];
+	for(i=1;i&lt;=N;i++)Ret-=Cnt[A[i]],Ret+=(Cnt[A[i]]=Set.size()),Set.insert(A[i]);
+	cout&lt;&lt;Ret&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CF1304E题解]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/cf1304e-ti-jie/</id>
@@ -28,13 +67,13 @@
 <li>在原有的路径上走过去。</li>
 <li>利用新增的边 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span> 走过去。</li>
 </ul>
-<p>首先对于第一种情况，</p>
-<p>我们显然是进行树上差分，即：</p>
-<p><code>Dist(X,Y)=Deep[X]+Deep[Y]-(Deep[GetLCA(X,Y)]&lt;&lt;1)</code>。</p>
-<p>而对于后一种情况，</p>
-<p>我们不难想到是  <code>Dist(A,X)+Dist(B,Y)+1</code>，</p>
-<p>或是 <code>Dist(A,Y)+Dist(B,X)+1</code>。</p>
-<p>那么代码不难写出。</p>
+<p>首先对于第一种情况，<br>
+我们显然是进行树上差分，即：<br>
+<code>Dist(X,Y)=Deep[X]+Deep[Y]-(Deep[GetLCA(X,Y)]&lt;&lt;1)</code>。<br>
+而对于后一种情况，<br>
+我们不难想到是  <code>Dist(A,X)+Dist(B,Y)+1</code>，<br>
+或是 <code>Dist(A,Y)+Dist(B,X)+1</code>。<br>
+那么代码不难写出。</p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 #define BetterIO ios::sync_with_stdio(false)
 using namespace std;
@@ -464,57 +503,6 @@ int main(void)
 	for(i=1;i&lt;=Total;i++)
 	{
 		register long long Now;cin&gt;&gt;Now,Now-=i;
-		Queue.push(Now);
-		if(Queue.top()&gt;Now)
-		{
-			Ans+=Queue.top()-Now;
-			Queue.pop();
-			Queue.push(Now);
-		}
-	}
-	cout&lt;&lt;Ans&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CF13C题解]]></title>
-        <id>https://20170952.github.io/Yxtbs.github.io/post/cf13c-ti-jie/</id>
-        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf13c-ti-jie/">
-        </link>
-        <updated>2021-08-26T10:04:41.000Z</updated>
-        <summary type="html"><![CDATA[<p>Codeforces Beta Round #13</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Codeforces Beta Round #13</p>
-<!-- more -->
-<h1 id="csequence">C.Sequence</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">2200</mn></mrow><annotation encoding="application/x-tex">\mathtt{2200}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">2</span><span class="mord mathtt">2</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-这道题目我们可以考虑直接上 STL<br>
-我们一个数一个数地放进一个大根堆(优先队列)<br>
-其实就是算到当前数时<br>
-取前面最大的数出来<br>
-假如现在这个数比前面最大数大或相等就没事<br>
-反之我们则需要考虑如何改为不降<br>
-我们肯定是将大的往小移，将小的往大移<br>
-那么花费一定是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>a</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|a-b|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">a</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">b</span><span class="mord">∣</span></span></span></span><br>
-为了不影响先前的答案<br>
-当然都是移到同一基准<br>
-即是先前的最大数<br>
-代码不难写出</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-long long Total;
-priority_queue&lt; long long &gt;Queue;
-int main(void)
-{
-	BetterIO;
-	register long long i;cin&gt;&gt;Total;
-	register long long Ans(0);
-	for(i=1;i&lt;=Total;i++)
-	{
-		register long long Now;cin&gt;&gt;Now;
 		Queue.push(Now);
 		if(Queue.top()&gt;Now)
 		{

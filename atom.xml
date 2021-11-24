@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://20170952.github.io/Yxtbs.github.io/</id>
     <title>Joker&apos;s Blog</title>
-    <updated>2021-11-21T14:26:26.351Z</updated>
+    <updated>2021-11-24T13:25:08.691Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://20170952.github.io/Yxtbs.github.io/"/>
     <link rel="self" href="https://20170952.github.io/Yxtbs.github.io/atom.xml"/>
@@ -10,6 +10,154 @@
     <logo>https://20170952.github.io/Yxtbs.github.io/images/avatar.png</logo>
     <icon>https://20170952.github.io/Yxtbs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Joker&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[初二化学基础知识]]></title>
+        <id>https://20170952.github.io/Yxtbs.github.io/post/chu-er-hua-xue-ji-chu-zhi-shi/</id>
+        <link href="https://20170952.github.io/Yxtbs.github.io/post/chu-er-hua-xue-ji-chu-zhi-shi/">
+        </link>
+        <updated>2021-11-24T10:11:32.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="元素符号">元素符号</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">氢</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">氦</td>
+<td style="text-align:center">He</td>
+<td style="text-align:center">锂</td>
+<td style="text-align:center">Li</td>
+<td style="text-align:center">铍</td>
+<td style="text-align:center">Be</td>
+<td style="text-align:center">硼</td>
+<td style="text-align:center">B</td>
+</tr>
+<tr>
+<td style="text-align:center">碳</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">氮</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">氧</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">氟</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">氖</td>
+<td style="text-align:center">Ne</td>
+</tr>
+<tr>
+<td style="text-align:center">钠</td>
+<td style="text-align:center">Na</td>
+<td style="text-align:center">镁</td>
+<td style="text-align:center">Mg</td>
+<td style="text-align:center">铝</td>
+<td style="text-align:center">Al</td>
+<td style="text-align:center">硅</td>
+<td style="text-align:center">Si</td>
+<td style="text-align:center">磷</td>
+<td style="text-align:center">P</td>
+</tr>
+<tr>
+<td style="text-align:center">硫</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">氯</td>
+<td style="text-align:center">Cl</td>
+<td style="text-align:center">氩</td>
+<td style="text-align:center">Ar</td>
+<td style="text-align:center">钾</td>
+<td style="text-align:center">K</td>
+<td style="text-align:center">钙</td>
+<td style="text-align:center">Ca</td>
+</tr>
+<tr>
+<td style="text-align:center">钛</td>
+<td style="text-align:center">Ti</td>
+<td style="text-align:center">铬</td>
+<td style="text-align:center">Cr</td>
+<td style="text-align:center">锰</td>
+<td style="text-align:center">Mn</td>
+<td style="text-align:center">铁</td>
+<td style="text-align:center">Fe</td>
+<td style="text-align:center">钴</td>
+<td style="text-align:center">Co</td>
+</tr>
+<tr>
+<td style="text-align:center">镍</td>
+<td style="text-align:center">Ni</td>
+<td style="text-align:center">铜</td>
+<td style="text-align:center">Cu</td>
+<td style="text-align:center">锌</td>
+<td style="text-align:center">Zn</td>
+<td style="text-align:center">溴</td>
+<td style="text-align:center">Br</td>
+<td style="text-align:center">氪</td>
+<td style="text-align:center">Kr</td>
+</tr>
+<tr>
+<td style="text-align:center">氙</td>
+<td style="text-align:center">Xe</td>
+<td style="text-align:center">氡</td>
+<td style="text-align:center">Rn</td>
+<td style="text-align:center">银</td>
+<td style="text-align:center">Ag</td>
+<td style="text-align:center">锡</td>
+<td style="text-align:center">Sn</td>
+<td style="text-align:center">碘</td>
+<td style="text-align:center">I</td>
+</tr>
+<tr>
+<td style="text-align:center">钡</td>
+<td style="text-align:center">Ba</td>
+<td style="text-align:center">钨</td>
+<td style="text-align:center">W</td>
+<td style="text-align:center">铂</td>
+<td style="text-align:center">Pt</td>
+<td style="text-align:center">金</td>
+<td style="text-align:center">Au</td>
+<td style="text-align:center">汞</td>
+<td style="text-align:center">Hg</td>
+</tr>
+<tr>
+<td style="text-align:center">铅</td>
+<td style="text-align:center">Pb</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="化合价">化合价</h2>
+<p>钾钠银氢正一价，钙镁钡锌正二价 。<br>
+氟氯溴碘负一价，一二铜，二三铁。<br>
+三铝四硅五价磷，二四六硫二四碳。</p>
+<h2 id="原子团">原子团</h2>
+<p>氢氧根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mtext mathvariant="monospace">OH</mtext><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">\texttt{OH}^{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.772341em;vertical-align:0em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">OH</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.772341em;"><span style="top:-3.06401em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span></span></span></span></span></span></span></span><br>
+硫酸根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">SO</mtext><mn>4</mn><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\texttt{SO}_{4}^{2-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.120547em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">SO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.854239em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span><br>
+亚硫酸根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">SO</mtext><mn>3</mn><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\texttt{SO}_{3}^{2-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.120547em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">SO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.854239em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span><br>
+碳酸根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">CO</mtext><mn>3</mn><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\texttt{CO}_{3}^{2-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.120547em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">CO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.854239em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span><br>
+碳酸氢根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">HCO</mtext><mn>3</mn><mo>−</mo></msubsup></mrow><annotation encoding="application/x-tex">\texttt{HCO}_{3}^{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0777700000000001em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">HCO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span><br>
+硝酸根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">NO</mtext><mn>3</mn><mo>−</mo></msubsup></mrow><annotation encoding="application/x-tex">\texttt{NO}_{3}^{-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0777700000000001em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">NO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span><br>
+磷酸根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">PO</mtext><mn>4</mn><mrow><mn>3</mn><mo>−</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">\texttt{PO}_{4}^{3-}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.120547em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">PO</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.854239em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span><br>
+铵根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext mathvariant="monospace">NH</mtext><mn>4</mn><mo>+</mo></msubsup></mrow><annotation encoding="application/x-tex">\texttt{NH}_{4}^{+}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0777700000000001em;vertical-align:-0.266308em;"></span><span class="mord"><span class="mord text"><span class="mord texttt">NH</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.811462em;"><span style="top:-2.433692em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.1031310000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.266308em;"><span></span></span></span></span></span></span></span></span></span></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[高等数学整理]]></title>
         <id>https://20170952.github.io/Yxtbs.github.io/post/gao-deng-shu-xue-zheng-li/</id>
@@ -706,50 +854,6 @@ int main(void)
 	for(i=1;i&lt;=N;i++)for(j=i+1;j&lt;=N;j++)if(Map[i][j])for(k=j+1;k&lt;=N;k++)if(Map[i][j]&amp;&amp;Map[i][k]&amp;&amp;Map[j][k])Ret=min(Ret,Deg[i]+Deg[j]+Deg[k]);
 	if(Ret==INT_MAX)Ret=5;
 	cout&lt;&lt;Ret-6&lt;&lt;endl;
-	return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CF965D题解]]></title>
-        <id>https://20170952.github.io/Yxtbs.github.io/post/cf965d-ti-jie/</id>
-        <link href="https://20170952.github.io/Yxtbs.github.io/post/cf965d-ti-jie/">
-        </link>
-        <updated>2021-10-12T05:52:40.000Z</updated>
-        <summary type="html"><![CDATA[<p>Codeforces Round #476 (Div. 2) [Thanks, Telegram!]</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Codeforces Round #476 (Div. 2) [Thanks, Telegram!]</p>
-<!-- more -->
-<h1 id="dsingle-use-stones">D.Single-use Stones</h1>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="monospace">D</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">f</mi><mi mathvariant="monospace">i</mi><mi mathvariant="monospace">c</mi><mi mathvariant="monospace">u</mi><mi mathvariant="monospace">l</mi><mi mathvariant="monospace">t</mi><mi mathvariant="monospace">y</mi></mrow><annotation encoding="application/x-tex">\mathtt{Difficulty}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.22222em;"></span><span class="mord"><span class="mord mathtt">D</span><span class="mord mathtt">i</span><span class="mord mathtt">f</span><span class="mord mathtt">f</span><span class="mord mathtt">i</span><span class="mord mathtt">c</span><span class="mord mathtt">u</span><span class="mord mathtt">l</span><span class="mord mathtt">t</span><span class="mord mathtt">y</span></span></span></span></span>=<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn mathvariant="monospace">1900</mn></mrow><annotation encoding="application/x-tex">\mathtt{1900}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61111em;vertical-align:0em;"></span><span class="mord"><span class="mord mathtt">1</span><span class="mord mathtt">9</span><span class="mord mathtt">0</span><span class="mord mathtt">0</span></span></span></span></span><br>
-先说结论：</p>
-<blockquote>
-<p>最多通过的青蛙的数量就是每个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间中石头数量的最小值。</p>
-</blockquote>
-<p>我们考虑一段长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间，<br>
-因为青蛙最多跳 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的距离，<br>
-不难想到，每只青蛙都一定会在这个区间落下至少一次。<br>
-因为一定可以从另一个石子数大于等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的区间跳过来，<br>
-所以这样取出的答案是可行的。<br>
-那么我们就得到了结论：</p>
-<blockquote>
-<p>最多通过的青蛙的数量就是每个长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 的区间中石头数量的最小值。</p>
-</blockquote>
-<p>代码就不难写出了。</p>
-<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
-#define BetterIO ios::sync_with_stdio(false)
-using namespace std;
-int W,L,A[100001],Prefix[100001];
-int main(void)
-{
-	BetterIO;
-	register int i;cin&gt;&gt;W&gt;&gt;L;
-	for(i=1;i&lt;W;i++)cin&gt;&gt;A[i];
-	for(i=1;i&lt;W;i++)Prefix[i]=Prefix[i-1]+A[i];
-	register int Ret(INT_MAX);
-	for(i=0;i+L&lt;W;i++)Ret=min(Ret,Prefix[i+L]-Prefix[i]);
-	cout&lt;&lt;Ret&lt;&lt;endl;
 	return 0;
 }
 </code></pre>
